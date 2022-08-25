@@ -1,0 +1,17 @@
+{%extends 'news/default.html'%}
+{% load custom_filters %}
+
+
+{%block title%} Новости {%endblock%}
+
+
+{%block content%}
+<h2>Список всех новостей</h2>
+<ul>
+    {%for new in news%}
+    <li><a href="{{new.get_url}}">{{new.title|censor}}</a> | {{new.dateCreation}} | {{new.text|truncatechars:20|censor}}
+    </li>
+
+    {%endfor%}
+</ul>
+{%endblock%}

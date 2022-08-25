@@ -1,0 +1,13 @@
+{%extends 'news/default.html'%}
+{% load custom_filters %}
+
+
+{%block title%} Новость {{new.title}} {%endblock%}
+
+
+{%block content%}
+    <h1>Это новость -> {{new.title|censor}}</h1>
+    <h2>Здесь текст -> {{new.text|censor}}</h2>
+    <h2>дата загрузки в формате день.месяц.год. -> {{new.dateCreation|date:'D.M.Y'}}</h2>
+
+{%endblock%}
